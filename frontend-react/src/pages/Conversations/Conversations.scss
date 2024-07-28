@@ -1,0 +1,35 @@
+.conversation-container {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    .list-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-y: scroll;
+    }
+
+    .buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        height: 70px;
+
+        button {
+            color: var(--main-color);
+            background-color: #e7fce3;
+
+            &.disabled {
+                background-color: var(--body-background-color);
+                color: #546583;
+
+                &:hover {
+                    background-color: var(--hover-button-background-color);
+                }
+            }
+        }
+    }
+}

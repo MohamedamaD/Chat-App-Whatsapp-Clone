@@ -1,0 +1,11 @@
+.message-skeleton {
+    height: 100%;
+    padding: 1rem;
+
+    .message {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end
+    }
+}

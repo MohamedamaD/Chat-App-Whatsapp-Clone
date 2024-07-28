@@ -1,0 +1,29 @@
+.user-search {
+    background-color: var(--body-background-color);
+    border-radius: 8px;
+
+    .search-container {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+
+        .icon {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.back {
+                svg {
+                    fill: var(--main-color);
+                }
+            }
+
+            svg {}
+        }
+    }
+
+    .custom-input {
+        background-color: transparent;
+    }
+}

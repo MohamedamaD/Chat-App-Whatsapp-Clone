@@ -1,0 +1,66 @@
+$header-height: 80px;
+$border: 1px solid #e9edef;
+
+#home-outlet {
+    height: 100%;
+    display: flex;
+    background-color: var(--body-background-color);
+
+
+    header {
+        height: $header-height;
+    }
+
+    >section,
+    >aside {
+        height: 100%;
+        position: relative;
+
+        &.main {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            border-right: 1px solid #cbcbcb5e;
+
+            .main-container {
+                background-color: var(--background-default);
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                height: calc(100vh - $header-height);
+
+                .search-fragment {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem;
+                    background-color: var(--background-default);
+                    border-bottom: $border;
+                    height: 100px;
+
+                    .user-search {
+                        width: 100%;
+                    }
+                }
+
+                .user-list-fragment {
+                    flex: 1;
+                    overflow: auto;
+                }
+            }
+        }
+
+        &.content {
+            flex: 1;
+        }
+    }
+
+    aside.main {
+        display: block;
+
+        .main-container {
+            flex: unset;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+    }
+}

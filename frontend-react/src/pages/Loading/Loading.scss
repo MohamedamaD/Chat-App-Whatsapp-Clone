@@ -1,0 +1,28 @@
+#loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    background-color: #fff;
+
+    svg {
+        transition: transform 0.3s linear;
+        animation: rotate-id 1.5s linear infinite;
+    }
+}
+
+@keyframes rotate-id {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,20 @@
+#search-result {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    background-color: var(--background-default);
+
+    .empty-section {
+        padding: 1rem;
+        text-align: center;
+
+        p {
+            font-size: 1.75rem;
+        }
+    }
+
+    .user-search-card-fragment {
+        cursor: pointer;
+    }
+}

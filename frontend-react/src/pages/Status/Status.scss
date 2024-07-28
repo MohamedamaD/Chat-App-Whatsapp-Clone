@@ -1,0 +1,127 @@
+#status-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+
+    .nav-container {
+        position: relative;
+
+        .icon {
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        #loading svg {
+            fill: var(--text-color);
+        }
+    }
+
+    .status-card {
+        padding: 1rem;
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        font-size: 18px;
+        height: 80px;
+        background-color: #fff;
+    }
+
+    .contacts-status {
+        background-color: #fff;
+        flex-grow: 1;
+        overflow-y: auto;
+
+        padding: 1rem;
+
+        .heading {
+            font-size: 18px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .status-menu-fragment {
+        .text-menu {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            color: #fff;
+            z-index: 12;
+            background-color: #90a841;
+            display: flex;
+            flex-direction: column;
+
+            .top-bar {
+                padding: 1rem;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .input-field {
+                flex: 1;
+
+                textarea {
+                    background-color: transparent;
+                    color: #fff;
+                    text-align: center;
+                    height: fit-content;
+                    font-size: 32px;
+                    resize: none;
+
+                    &::placeholder {
+                        font-size: 32px;
+                        color: #fff;
+                        text-transform: capitalize;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .send-container {
+                padding: 1rem;
+
+                button {
+                    width: 45px;
+                    height: 45px;
+                    background-color: var(--main-color);
+                    color: #fff;
+                    border-radius: 100%;
+                    margin: auto;
+
+                    &:disabled {
+                        filter: grayscale(1);
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+
+    .status-menu {
+        z-index: 11;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #fff;
+        overflow: hidden;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 150px;
+            padding: 1rem;
+            cursor: pointer;
+
+            svg {
+                fill: var(--text-color);
+            }
+        }
+    }
+}

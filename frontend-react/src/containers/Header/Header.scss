@@ -1,0 +1,47 @@
+header#header {
+    background-color: var(--body-background-color);
+    position: relative;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+
+        .header-panel {
+            position: absolute;
+            right: 10px;
+            top: 100%;
+
+            .header-panel-overlay {
+                z-index: 3;
+            }
+
+            ul {
+                position: relative;
+                z-index: 2;
+                width: 200px;
+                background-color: #fff;
+                z-index: 4;
+
+                li {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .avatar-fragment {
+            cursor: pointer;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .icon {
+                cursor: pointer;
+            }
+        }
+    }
+}

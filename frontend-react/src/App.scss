@@ -1,0 +1,64 @@
+/* Query */
+.back-icon-mobile-screen {
+    display: none;
+}
+
+.App {
+    height: 100vh;
+}
+
+nav.aside-nav {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 108px;
+    padding: 1rem;
+
+    .nav-container {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    svg,
+    h1 {
+        fill: #fff;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    svg {
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .back-icon-mobile-screen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home-outlet {
+        display: block;
+
+        >aside.main {
+            width: 100%;
+
+            &.hidden {
+                display: none;
+            }
+        }
+
+        >section.content {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

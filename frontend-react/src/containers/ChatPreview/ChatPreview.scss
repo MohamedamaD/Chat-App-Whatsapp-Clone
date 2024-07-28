@@ -1,0 +1,49 @@
+.chat-preview {
+    padding: 2rem;
+    position: relative;
+    height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .top-bar {
+        svg {
+            fill: #54656f;
+        }
+    }
+
+    .preview {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .caption {
+        height: 100px;
+    }
+
+    .send-button-fragment {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+
+        .send-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+
+            background-color: var(--main-color);
+            cursor: pointer;
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+}

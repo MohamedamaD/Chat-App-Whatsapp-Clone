@@ -1,0 +1,61 @@
+.chat-message {
+    background-color: #fff;
+    width: fit-content;
+    min-width: 60px;
+    padding: 1rem;
+    box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+    position: relative;
+    border-top-left-radius: unset;
+    text-align: start;
+    max-width: 80%;
+
+    &.active {
+        background-color: #d9fdd3;
+        align-self: flex-end;
+    }
+
+    p.text {
+        margin-bottom: 0.75rem;
+    }
+
+    .fragment {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        justify-content: flex-end;
+
+        .status-fragment {
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: -11px;
+            }
+
+            &.active {
+                svg {
+                    fill: #53bdeb;
+                }
+            }
+        }
+    }
+
+    .time {
+        color: var(--secondary-text-color);
+        text-align: end;
+        font-size: 12px;
+        display: block;
+    }
+
+    .image-container,
+    .video-container {
+        margin-bottom: 1rem;
+        max-width: 400px;
+    }
+
+    .video-container {
+        video {
+            width: 100%;
+        }
+    }
+}

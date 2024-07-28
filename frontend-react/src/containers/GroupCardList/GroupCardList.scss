@@ -1,0 +1,26 @@
+.group-card-list {
+    .card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: #fff;
+        padding: 2rem 1rem;
+
+        &.active,
+        &:hover {
+            background-color: #f0f2f5;
+        }
+
+        &.is-new {
+            background-color: #48ff5042;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .is-new {
+            color: var(--main-color);
+        }
+    }
+}

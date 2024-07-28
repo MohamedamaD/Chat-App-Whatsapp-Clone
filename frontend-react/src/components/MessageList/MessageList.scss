@@ -1,0 +1,36 @@
+.messages-list {
+    height: calc(100vh - 160px);
+    background: url('../../assets/chat_background.png') center;
+    object-fit: cover;
+    background-color: #efeae2;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+
+    .message-fragment {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 1rem;
+        min-width: 100px;
+
+        &.active {
+            align-self: flex-end;
+        }
+
+        .chat-message {
+            width: 100%;
+            min-width: 100px;
+        }
+
+        .user-avatar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}

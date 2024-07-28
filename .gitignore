@@ -1,0 +1,13 @@
+# Ignore node_modules in both front-end and backend
+/frontend-react/node_modules/
+/backend-node/node_modules/
+
+
+# Ignore .env files in both front-end and backend
+/frontend-react/.env
+/backend-node/.env
+
+/record
+/.vscode
+
+**/node_modules/

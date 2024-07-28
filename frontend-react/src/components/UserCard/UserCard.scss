@@ -1,0 +1,34 @@
+.user-card {
+    padding: 1rem 0;
+    background-color: #fff;
+
+    &.active,
+    &:hover {
+        background-color: #f0f2f5;
+    }
+
+    .card-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem;
+
+        .fragment {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .text-container,
+        .time-container {
+            * {
+                color: var(--secondary-text-color);
+            }
+
+            h3 {
+                color: var(--text-color);
+            }
+        }
+    }
+}

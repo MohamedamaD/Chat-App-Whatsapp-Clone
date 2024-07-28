@@ -1,0 +1,52 @@
+#register {
+    form {
+        .profile-picture {
+            border: 2px dashed #fff;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+            width: 100%;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+        }
+
+        .upload-icon {
+            font-size: 2em;
+            color: var(--text-color);
+        }
+
+        .profile-picture span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: var(--text-color);
+        }
+
+        .file-uploader {
+            display: none;
+        }
+
+        .image-preview {
+            max-width: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+            object-fit: cover;
+                object-position: center;
+                aspect-ratio: 1 / 1;
+                width: 250px;
+            }
+        }
+    }
+
+    .error-message {
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,16 @@
+.empty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 2rem;
+
+    p {
+        font-size: 18px;
+    }
+
+    svg {
+        fill: var(--main-color);
+    }
+}

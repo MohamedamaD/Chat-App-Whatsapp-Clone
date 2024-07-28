@@ -1,0 +1,56 @@
+header.chat-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    .reception-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+
+
+        .image-container {
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+
+        .text-container {
+            text-align: start;
+
+            p {
+                font-size: 18px;
+            }
+
+            span {
+                color: var(--main-color);
+                font-size: small;
+                animation: typingAnimation 1.5s infinite;
+            }
+
+            @keyframes typingAnimation {
+                0% {
+                    opacity: 1;
+                }
+
+                33% {
+                    opacity: 0.3;
+                }
+
+                66% {
+                    opacity: 0.6;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+
+        }
+    }
+}

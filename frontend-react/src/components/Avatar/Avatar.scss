@@ -1,0 +1,73 @@
+.user-avatar {
+    .avatar-container {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        img {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .active-user {
+            position: absolute;
+            bottom: 8px;
+            right: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: var(--main-color);
+
+            animation: pulse 2s infinite;
+
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+                }
+
+                70% {
+                    box-shadow: 0 0 10px 10px rgba(0, 255, 0, 0);
+                }
+
+                100% {
+                    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+                }
+            }
+        }
+
+        &.large {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+
+        &.x-large {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+        }
+
+        &.x-small {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+        }
+
+        strong {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font: inherit;
+        text-align: center;
+    }
+
+    // img {}
+}

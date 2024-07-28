@@ -1,0 +1,106 @@
+#edit-profile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--body-background-color);
+    text-align: start;
+
+
+    section {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1.5rem;
+
+        .avatar-fragment {
+            position: relative;
+            width: fit-content;
+            align-self: center;
+
+            .overlay-close {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+
+            &:hover .change-container {
+                opacity: 1;
+            }
+
+            .change-container {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+                opacity: 0;
+                transition: opacity 0.3s linear;
+                background-color: rgba(128, 128, 128, 0.508);
+                border-radius: 75px;
+                cursor: pointer;
+
+                svg {
+                    color: #fff;
+                }
+
+                p {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        p.message {
+            padding: 1rem 2rem;
+        }
+
+        .white-container {
+            background-color: #fff;
+            width: 100%;
+            padding: 1rem 2rem;
+
+            .input-field {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                input {
+                    flex: 1;
+                    font: inherit;
+
+                    &.custom-input {
+                        border-radius: 0;
+                        border-bottom: 2px solid var(--text-color);
+
+                        &:focus {
+                            border-bottom-color: var(--main-color);
+                        }
+                    }
+                }
+            }
+
+            p {
+                color: var(--main-color);
+                margin-bottom: 1rem;
+            }
+
+            svg {
+                fill: var(--text-color);
+                cursor: pointer;
+            }
+        }
+    }
+}

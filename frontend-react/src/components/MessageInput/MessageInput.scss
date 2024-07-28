@@ -1,0 +1,27 @@
+  footer.chat-footer {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+
+      position: relative;
+
+      .input-field {
+          flex: 1;
+          z-index: 0;
+      }
+
+      form {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          gap: 1rem;
+      }
+
+      .send-icon {
+          &:hover {
+              fill: var(--main-color);
+          }
+      }
+  }

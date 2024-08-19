@@ -50,11 +50,9 @@ io.on("connection", (socket) => {
   try {
     const decoded = verifyToken(token);
     socket.user = decoded.user;
-    console.log("user connect with #id ", socket.user._id);
   } catch (error) {
-    console.log(error);
-    // catch verify token exception when there is no token
-    console.log("forbidden user connect");
+    socket.disconnect(true);
+    return;
   }
 
   // our actions
@@ -130,7 +128,6 @@ io.on("connection", (socket) => {
     // seen messages
     socket.on("seen-messages", async (data) => {
       const payload = { ...data, sender: socket.user?._id };
-      console.log("payload", payload);
       const messages = await updateMessagesStatus(payload);
       socket.emit("seen-messages", messages);
       socket
@@ -168,7 +165,6 @@ io.on("connection", (socket) => {
 
       // notify group members
       data.members.forEach((member) => {
-        console.log(member);
         io.to(member.user).emit("join-group", payload);
       });
 
@@ -215,7 +211,6 @@ io.on("connection", (socket) => {
       const { userID, groupID } = data;
       const group = await exitUserFromGroup({ userID, groupID });
       await group.populate("members.user");
-      console.log(group);
       callback({ success: true, group });
     });
     // delete group
@@ -243,14 +238,12 @@ io.on("connection", (socket) => {
       };
 
       group.members.forEach((member) => {
-        console.log(member);
         io.to(member.user.toString()).emit("new-message", payload);
       });
     });
     // add members to group
     socket.on("add-members", async (data, callback) => {
       const { members, groupID } = data;
-      // console.log(groupID);
       const group = await addMembers({ members, groupID });
       await group.populate("members.user");
       callback({ success: true, group });
@@ -264,7 +257,6 @@ io.on("connection", (socket) => {
 
     // create status
     socket.on("create-status", async (data, callback) => {
-      console.log(data);
       const status = await createStatus(data);
       callback({ success: true, status });
 
@@ -319,8 +311,6 @@ io.on("connection", (socket) => {
     });
 
     socket.leave(socket.user._id);
-    console.log("user disconnect with #id ", socket.user._id.toString());
-    console.log("user online?", socket.user.online); // false
   });
 });
 

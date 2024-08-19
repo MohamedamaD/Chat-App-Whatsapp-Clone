@@ -9,7 +9,7 @@ const getGroupById = async (payload) => {
       .populate("messages");
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const getGroupBySubject = () => {};
@@ -23,7 +23,7 @@ const getJoinedGroups = async (payload) => {
       .sort({ updatedAt: -1 });
     return groups;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const createGroup = async (payload) => {
@@ -31,7 +31,7 @@ const createGroup = async (payload) => {
     const group = await Group.create(payload);
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const deleteGroup = async (payload) => {
@@ -39,7 +39,7 @@ const deleteGroup = async (payload) => {
     const groupID = new mongoose.Types.ObjectId(payload.groupID);
     await Group.findByIdAndDelete(groupID);
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const editGroup = async (payload) => {
@@ -52,7 +52,7 @@ const editGroup = async (payload) => {
       .populate("messages");
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const userIsAdmin = async (payload) => {
@@ -69,7 +69,7 @@ const userIsAdmin = async (payload) => {
 
     return group !== null;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const exitUserFromGroup = async (payload) => {
@@ -87,7 +87,7 @@ const exitUserFromGroup = async (payload) => {
 
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const addMembers = async (payload) => {
@@ -107,7 +107,7 @@ const addMembers = async (payload) => {
     );
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 const getUserContactsToAdd = async (req, res, next) => {
@@ -170,7 +170,6 @@ const getUserContactsToAdd = async (req, res, next) => {
       },
     });
   } catch (error) {
-    console.log(error);
     res.status(500).send("Internal server error");
   }
 };
@@ -186,9 +185,7 @@ const pushMessagesIntoGroup = async (payload) => {
       { new: true }
     );
     return group;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 const editUserRole = async (payload) => {
@@ -204,7 +201,7 @@ const editUserRole = async (payload) => {
     ).populate("members.user");
     return group;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 

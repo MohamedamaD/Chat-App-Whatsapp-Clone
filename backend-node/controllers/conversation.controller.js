@@ -154,7 +154,6 @@ const getUserContacts = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log("error message from getUserContacts", error);
     res.status(500).send("internal server error");
   }
 };

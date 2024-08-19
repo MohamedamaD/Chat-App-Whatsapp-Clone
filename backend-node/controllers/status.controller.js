@@ -5,10 +5,8 @@ const createStatus = async (payload) => {
   try {
     const status = new Status(payload);
     await status.save();
-    console.log("Status created successfully:", status);
     return status;
   } catch (error) {
-    console.error("Error creating status:", error);
     throw error;
   }
 };
@@ -19,10 +17,8 @@ const getStatusById = async (payload) => {
     if (!status) {
       throw new Error("Status not found");
     }
-    console.log("Status found:", status);
     return status;
   } catch (error) {
-    console.error("Error fetching status by ID:", error);
     throw error;
   }
 };
@@ -41,10 +37,8 @@ const markStatusAsSeen = async (payload) => {
       throw new Error("Status not found");
     }
 
-    console.log("Status marked as seen:", status);
     return status;
   } catch (error) {
-    console.error("Error marking status as seen:", error);
     throw error;
   }
 };
@@ -55,10 +49,8 @@ const deleteStatus = async (payload) => {
     if (!status) {
       throw new Error("Status not found");
     }
-    console.log("Status deleted successfully:", status);
     return status;
   } catch (error) {
-    console.error("Error deleting status:", error);
     throw error;
   }
 };
@@ -69,7 +61,6 @@ const getMyStatus = async (payload) => {
 
     return statuses;
   } catch (error) {
-    console.error("Error get statuses:", error);
     throw error;
   }
 };
@@ -82,7 +73,6 @@ const getLatestStatus = async (payload) => {
 
     return status;
   } catch (error) {
-    console.error("Error getting latest status:", error);
     throw error;
   }
 };

@@ -49,7 +49,6 @@ UserSchema.pre("save", async function (next) {
   const user = this;
   user.password = await hashPassword(user.password);
 
-  console.log(user);
   next();
 });
 

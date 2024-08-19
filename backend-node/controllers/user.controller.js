@@ -29,14 +29,12 @@ const register = async (req, res, next) => {
     user.password = null;
 
     const token = generateToken({ user });
-    console.log(token);
 
     res
       .status(201)
       .cookie("token", token, { HttpOnly: true, secure: true })
       .json({ message: "user created successfully" });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -54,7 +52,6 @@ const getUserByEmail = async (req, res, next) => {
     }
     res.status(200).json({ message: "user exist", data: { user } });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -82,7 +79,6 @@ const login = async (req, res, next) => {
       },
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -106,8 +102,6 @@ const forgotPassword = async (req, res, next) => {
     user.resetTokenExpires = Date.now() + 3600000;
     await user.save();
 
-    console.log(user);
-
     const resetLink = `${process.env.CLIENT_URL}/auth/reset-password?token=${resetToken}&email=${email}`;
 
     await sendMail(
@@ -121,7 +115,6 @@ const forgotPassword = async (req, res, next) => {
       .status(200)
       .json({ message: "Password reset email sent", sendMail: true });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -149,7 +142,6 @@ const resetPassword = async (req, res, next) => {
       .status(200)
       .json({ message: "Password has been reset successfully", user });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -161,7 +153,6 @@ const logout = async (req, res, next) => {
       .clearCookie("token", { http: true, secure: true })
       .json({ message: " logged out" });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -175,7 +166,6 @@ const getUserDetails = async (req, res, next) => {
     );
     res.status(200).json({ data: { user } });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -189,7 +179,6 @@ const protected = async (req, res, next) => {
       .status(200)
       .json({ message: "This is protected data", user: decoded.user });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -213,7 +202,6 @@ const editUserDetails = async (req, res, next) => {
       },
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -230,7 +218,6 @@ const userSearch = async (req, res, next) => {
 
     res.status(200).json({ message: "success query", data: users });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: error.message || error,
     });
@@ -246,9 +233,7 @@ const setUserOnline = async (payload) => {
       },
       { new: true }
     );
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 module.exports = {
